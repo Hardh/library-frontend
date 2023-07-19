@@ -1,0 +1,6 @@
+-- Rodar rabbit
+docker run -d --hostname my-rabbit --name server-rabbit -e RABBITMQ_DEFAULT_USER=user -e RABBITMQ_DEFAULT_PASS=password -p 15672:15672 rabbitmq:3-management
+
+-- Rodar redis
+docker volume create redis-data
+docker run --name redis -v redis-data:/data -d -p 6379:6379 redis redis-server --requirepass "password"
